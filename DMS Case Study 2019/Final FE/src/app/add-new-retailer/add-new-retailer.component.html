@@ -1,0 +1,165 @@
+<!-- Header Toolbar -->
+
+<header></header>
+
+<!-- Central Containt -->
+<div class="content-div">
+
+  <!-- SideBar List -->
+  <sidenavbar></sidenavbar>
+
+<!-- Main Grid -->
+
+  <div class='content-card' >
+
+      
+      <div class="content-div" >
+        
+        <h5 style="text-align: left; "> Add New Retailer</h5>  
+        <hr class="hr-silver">
+
+
+        <div style="margin-top: 2%; ">
+        
+
+          <div style="font-size: 100%; text-align: center" *ngIf=formError class="loginFormErrorDiv">
+            <p class="alert alert-danger">Email or Password already exists</p>
+        </div>
+
+          <form [formGroup]="addRetailerForm" (ngSubmit)="onSubmit()">
+        
+        
+            <div class="form-group">
+                    
+              <label>Retailer Name</label>
+              <input type="text" [class.is-invalid]="addRetailerForm.get('retName').invalid
+                      && addRetailerForm.get('retName').touched"
+                     [class.is-valid]="addRetailerForm.get('retName').valid" 
+                     formControlName="retName" class="form-control">
+        
+                     <small class="text-danger"
+                            [class.d-none]="addRetailerForm.get('retName').valid
+                            || addRetailerForm.get('retName').untouched">
+                         Invalid name </small>
+              
+            </div>
+        
+            <div class="form-group">
+                    
+              <label>Email</label>
+              <input type="email" [class.is-invalid]="addRetailerForm.get('retEmail').invalid
+                      && addRetailerForm.get('retEmail').touched"
+                     [class.is-valid]="addRetailerForm.get('retEmail').valid" 
+                     formControlName="retEmail" class="form-control">
+        
+                     <small class="text-danger"
+                            [class.d-none]="addRetailerForm.get('retEmail').valid
+                            || addRetailerForm.get('retEmail').untouched">
+                         Invalid email  </small>
+              
+            </div>
+        
+            <div class="form-group" hidden="true">
+              
+                <label>Password</label>
+                <input type="text"  [class.is-invalid]="addRetailerForm.get('retPassword').invalid
+                        && addRetailerForm.get('retPassword').touched"
+                        [class.is-valid]="addRetailerForm.get('retPassword').valid" 
+                        formControlName="retPassword" class="form-control">
+                <small [class.d-none]="addRetailerForm.get('retPassword').valid"> 
+                        Invalid password (Minimum 6 characters required)</small>
+                
+            </div>
+        
+            <div class="form-group">
+                    
+              <label>Address</label>
+              <input type="text" [class.is-invalid]="addRetailerForm.get('retAddress').invalid
+                      && addRetailerForm.get('retAddress').touched"
+                     [class.is-valid]="addRetailerForm.get('retAddress').valid" 
+                     formControlName="retAddress" class="form-control">
+        
+                     <small class="text-danger"
+                            [class.d-none]="addRetailerForm.get('retAddress').valid
+                            || addRetailerForm.get('retAddress').untouched">
+                             Inalid <b>address</b> </small>
+              
+            </div>
+        
+            <div class="form-group">
+                    
+              <label>Contact No</label>
+              <input type="tel" [class.is-invalid]="addRetailerForm.get('retContact').invalid
+                      && addRetailerForm.get('retContact').touched"
+                     [class.is-valid]="addRetailerForm.get('retContact').valid" 
+                     formControlName="retContact" class="form-control">
+        
+                     <small class="text-danger"
+                            [class.d-none]="addRetailerForm.get('retContact').valid
+                            || addRetailerForm.get('retContact').untouched">
+                            Invalid <b>mobile number</b> </small>
+              
+            </div>
+        
+            <div class="form-group" hidden="true">
+                    
+              <label>Status</label>
+              <input type="text" [class.is-invalid]="addRetailerForm.get('retStatus').invalid
+                      && addRetailerForm.get('retStatus').touched"
+                     [class.is-valid]="addRetailerForm.get('retStatus').valid" 
+                     formControlName="retStatus" class="form-control">
+        
+                     <small class="text-danger"
+                            [class.d-none]="addRetailerForm.get('retStatus').valid
+                            || addRetailerForm.get('retStatus').untouched">
+                            Inalid status </small>
+              
+            </div>
+                    
+        
+            <div style="margin-left: 30%">
+        
+              <button mat-raised-button type="submit" 
+                      matTooltip="Submit all Details"
+                      [disabled]="addRetailerForm.get('retName').invalid
+                       || addRetailerForm.get('retEmail').invalid || addRetailerForm.get('retAddress').invalid
+                       || addRetailerForm.get('retContact').invalid " 
+                      style="padding-right: 5% ;">
+                <mat-icon>cloud_upload</mat-icon>
+                Submit Details
+              </button>
+        
+              &nbsp;
+        
+              <button mat-raised-button  
+                      matTooltip="Clear all Input Fields"
+                      type="reset" style="padding-right: 5.5% ;">
+                <mat-icon>format_clear</mat-icon>
+                Clear All Fields
+              </button>
+        
+            </div>
+        
+        
+          </form>
+        
+        </div>
+        
+
+      </div>
+
+  
+    
+  </div>
+
+
+  <ngx-loading [show]="loading" [config]="{ primaryColour: 'rgb(183, 226, 243)', backdropBorderRadius: '3px'}"
+     ></ngx-loading>
+
+</div>
+
+
+
+<!-- <mat-dialog-actions >
+  <button mat-raised-button cdkFocusInitial style="">Submit</button>
+</mat-dialog-actions> -->

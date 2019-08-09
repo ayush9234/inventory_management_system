@@ -1,0 +1,88 @@
+<!-- Header Toolbar -->
+
+<header></header>
+  
+  
+  <!-- Central Containt -->
+  <div class="content-div">
+  
+    <!-- SideBar List -->
+    <sidenavbar></sidenavbar>
+  
+  <!-- Main Grid -->
+  
+    <div class='content-card' >
+  
+
+        <div class="content-div" *ngIf="noInventory">
+            <h5 style="text-align: left;"> My Inventory
+                
+                <button style="cursor: pointer ;float: right; right: 1%; margin-bottom: 1%;"
+                        mat-raised-button routerLink="/order-inventory" 
+                        title="Order Products" class="order-inventory">
+                  <span class="glyphicon glyphicon-plus"></span>
+                   Order
+                </button>
+                
+              </h5>  
+              <hr class="hr-silver">
+              <h6 class="alert alert-danger" style="text-align: center ; font-size: 95% ; margin-top: 6%;">No Inventory in your Account</h6>
+        
+
+        </div>
+       
+        <div class="content-div" *ngIf="!noInventory">
+          
+            <div >
+             
+              <h5 style="text-align: left;"> My Inventory
+                
+                <button style="cursor: pointer ;float: right; right: 1%; margin-bottom: 1%;"
+                        mat-raised-button routerLink="/order-inventory" 
+                        title="Order Products" class="order-inventory">
+                  <span class="glyphicon glyphicon-plus"></span>
+                   Order
+                </button>
+                
+              </h5>  
+              <hr class="hr-silver">
+
+                    
+                    <table style="width: 80%; margin-left: 10%" mat-table [dataSource]="inventories" class="mat-elevation-z8" >
+                
+                        <!--- Note that these columns can be defined in any order.
+                                  The actual rendered columns are set as a property on the row definition" -->
+                    
+                      
+                        <ng-container matColumnDef="productName">
+                            <th mat-header-cell *matHeaderCellDef > Product Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+                        </ng-container>
+                    
+                     
+                        <ng-container matColumnDef="productQuantity">
+                            <th mat-header-cell *matHeaderCellDef >Quantity </th>
+                            <td mat-cell *matCellDef="let element"> {{element.productQuantity}} </td>
+                        </ng-container>
+                    
+                  
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                    </table>
+                    
+                
+                </div>
+                
+                 
+       </div>
+  
+    
+      
+    </div>
+  
+  </div>
+  
+  
+

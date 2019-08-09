@@ -1,0 +1,108 @@
+<!-- Header Toolbar -->
+
+<header></header>
+
+  <!-- Central Containt -->
+  <div class="content-div">
+  
+  <sidenavbar></sidenavbar>
+  
+  <!-- Main Grid -->
+  
+    <div class='content-card' >
+  
+        
+           <h5 style="text-align: left; margin-top: 5%">Sales History</h5>  
+           <hr class="hr-silver">
+
+           <div class="mat-elevation-z8">
+
+            <mat-form-field style="margin-left: 2%">
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+            </mat-form-field>        
+          
+            <mat-table #table mat-table class="mat-elevation-z8" 
+                  style=" width: 96%; margin: 2%" 
+                  mat-table [dataSource]="transactions" 
+                  matSort >
+            
+                <ng-container matColumnDef="transactionId">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Transaction Id  </mat-header-cell>
+                    <mat-cell *matCellDef="let element">{{element.transactionId}}</mat-cell>
+                </ng-container>
+                
+                
+            
+                <ng-container matColumnDef="buyerName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>&nbsp; Buyer Name </mat-header-cell>
+                    <mat-cell *matCellDef="let element">&nbsp; {{element.buyerName}} </mat-cell>
+                </ng-container>
+            
+                <ng-container matColumnDef="transactionStatus">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        <div *ngIf="element.transactionStatus == 'Accepted'"  style=" color: green">
+                             <strong> {{element.transactionStatus}} </strong>     
+                        </div>
+                        
+                        <div *ngIf="element.transactionStatus == 'Rejected'"  style=" color: rgb(250, 51, 44)">
+                                <strong> {{element.transactionStatus}} </strong>     
+                        </div>
+
+                        <div *ngIf="element.transactionStatus == 'Pending'"  style=" color: #2b74bd">
+                                <strong> {{element.transactionStatus}} </strong>     
+                        </div>
+                           
+                    </mat-cell>
+                </ng-container>
+            
+            
+                <ng-container matColumnDef="sellerName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Seller Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.sellerName}} </mat-cell>
+                </ng-container>
+            
+                <ng-container matColumnDef="totalPrice">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Total Price</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.totalPrice}} </mat-cell>
+                </ng-container>
+            
+                <ng-container matColumnDef="creationTime">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Creation Time</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.creationTime | date:['hh:mm:ss dd/MM/yyyy'] }} </mat-cell>
+                </ng-container>
+            
+                <ng-container matColumnDef="view">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Transaction Details</mat-header-cell>
+                    <mat-cell style="cursor: pointer" mat-cell  title="View Details" 
+                              *matCellDef="let element" (click)=getTransactionDetail(element)>
+                              <mat-icon>visibility</mat-icon>
+                              <!-- &nbsp; <u>View Details</u> -->
+                            </mat-cell>
+                </ng-container>
+            
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          
+           </mat-table>
+           
+           <mat-paginator #paginator 
+                               [pageIndex]="0"
+                               [pageSize]="10"
+                               [pageSizeOptions]="[ 5 , 10]"
+                               showFirstLastButtons="true">
+           </mat-paginator>
+           
+
+           
+          
+                 
+      
+ 
+      
+    </div>
+  
+  </div>
+  
+  
+

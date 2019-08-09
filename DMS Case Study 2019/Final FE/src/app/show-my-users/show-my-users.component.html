@@ -1,0 +1,142 @@
+
+<!-- Header Toolbar -->
+
+<header></header>
+
+
+<!-- Central Containt -->
+<div class="content-div">
+
+  <!-- SideBar List -->
+  <sidenavbar></sidenavbar>
+
+<!-- Main Grid -->
+
+  <div class='content-card' >
+
+ 
+      
+      <div class="content-div" >
+        
+        <h5 style="text-align: left; "> Retailer List
+        
+          <div *ngIf="addButton"
+                style="float: right; position: unset; margin-right: 1%; ">
+                <button mat-raised-button 
+                 routerLink='/add-retailer'
+                 title=" Add a new Retailer "
+                 TooltipPosition="right"
+
+                 aria-label="Button that displays a tooltip that can be programatically disabled">
+                 <mat-icon >add</mat-icon>                  
+                Add Retailer
+                </button>
+
+          </div>
+
+        </h5>  
+        <hr class="hr-silver">
+
+        <div *ngIf="!addButton"
+                           style="float: right; position: unset; margin-top: 2.5%; 
+                                  margin-right: 1%; ">
+          <button mat-raised-button 
+                  (click)="onClickCancel()"
+                  title=" Cancel "
+                  TooltipPosition="right"
+                  
+                  aria-label="Button that displays a tooltip that can be programatically disabled">
+                  <mat-icon >cancel</mat-icon>                  
+                    
+           </button>
+          
+        </div>
+        
+       
+        
+        <div *ngIf="addRetailerForm" style="text-align: left">
+          <add-new-retailer></add-new-retailer>
+        </div>
+        
+        
+
+        <div class="mat-elevation-z8">
+        
+
+        
+        <!-- Mat Table for retailer list  -->
+
+        <mat-form-field style="margin-left: 2%">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+        
+          <mat-table class="mat-elevation-z8" 
+                     style="max-height: 400px; overflow: auto; width: 96%; margin: 2%; margin-bottom: 2%" 
+                     mat-table [dataSource]="customersDataSource" 
+                     matSort >
+          
+          
+          <ng-container matColumnDef="userName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let retailer"> {{retailer.userName}} </mat-cell>
+          </ng-container>
+          
+                  
+          <ng-container matColumnDef="email">        
+            <mat-header-cell *matHeaderCellDef mat-sort-header >Email </mat-header-cell>            
+            <mat-cell aria-colspan="3" aria-rowspan="2" *matCellDef="let retailer"> {{retailer.email}} </mat-cell>          
+          </ng-container>
+          
+          
+          <ng-container matColumnDef="personalAddress">          
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Address </mat-header-cell>          
+            <mat-cell *matCellDef="let retailer"> {{retailer.personalAddress}} </mat-cell>          
+          </ng-container>
+          
+          
+          <ng-container matColumnDef="contactno">       
+            <mat-header-cell *matHeaderCellDef mat-sort-header >Contact No</mat-header-cell>          
+            <mat-cell *matCellDef="let retailer"> {{retailer.contactno}} </mat-cell>          
+          </ng-container>
+          
+          
+          <ng-container matColumnDef="userStatus">        
+           <mat-header-cell *matHeaderCellDef mat-sort-header >User Status</mat-header-cell>          
+           <mat-cell *matCellDef="let retailer"> {{retailer.userStatus}} </mat-cell>          
+          </ng-container>
+         
+        
+          <ng-container matColumnDef="area">          
+            <mat-header-cell *matHeaderCellDef mat-sort-header >Area</mat-header-cell>            
+            <mat-cell *matCellDef="let retailer"> {{retailer.area}} </mat-cell>           
+          </ng-container>
+            
+          
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>        
+          <mat-row aria-rowspan="2" *matRowDef="let row; columns: displayedColumns"
+                   (click)="onRowClicked(row)">
+          </mat-row>
+          
+          
+          </mat-table>
+          
+          <mat-paginator #paginator
+                         style="width: 90%; margin-left : 5%" 
+                         [length]="length"
+                         [pageIndex]="pageIndex"
+                         [pageSize]="10" 
+                         [pageSizeOptions]="[5, 10]" 
+                         (page)="pageEvent = handlePage($event)"
+                         showFirstLastButtons></mat-paginator>
+        
+               
+     </div>
+
+  
+    
+  </div>
+
+</div>
+
+
+

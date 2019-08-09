@@ -1,0 +1,390 @@
+<!-- <table #table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matsort (matSortChange)="sortData($event)">
+
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element" matSortHeader> {{element.position}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef matSortHeader> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef matSortHeader> Weight </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef matSortHeader> Symbol </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </table> -->
+
+<!-- <table mat-table class="mat-elevation-z8" 
+       style="width: 90%; margin-left : 5%" 
+       mat-table [dataSource]="dataSource" 
+       matSort >
+
+
+
+<ng-container matColumnDef="userName">
+
+<mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+
+<mat-cell *matCellDef="let retailer"> {{retailer.userName}} </mat-cell>
+
+</ng-container>
+
+
+
+<ng-container matColumnDef="email">
+
+<mat-header-cell *matHeaderCellDef mat-sort-header >Email </mat-header-cell>
+
+<mat-cell *matCellDef="let retailer"> {{retailer.email}} </mat-cell>
+
+</ng-container>
+
+
+
+<ng-container matColumnDef="personalAddress">
+
+<mat-header-cell *matHeaderCellDef mat-sort-header>Address </mat-header-cell>
+
+<mat-cell *matCellDef="let retailer"> {{retailer.personalAddress}} </mat-cell>
+
+</ng-container>
+
+
+
+<ng-container matColumnDef="contactno">
+
+<mat-header-cell *matHeaderCellDef mat-sort-header >Contact No</mat-header-cell>
+
+<mat-cell *matCellDef="let retailer"> {{retailer.contactno}} </mat-cell>
+
+</ng-container>
+
+
+
+<ng-container matColumnDef="userStatus">
+
+<mat-header-cell *matHeaderCellDef mat-sort-header >User Status</mat-header-cell>
+
+<mat-cell *matCellDef="let retailer"> {{retailer.userStatus}} </mat-cell>
+
+</ng-container>
+
+
+
+<ng-container matColumnDef="area">
+
+<mat-header-cell *matHeaderCellDef mat-sort-header >Area</mat-header-cell>
+
+<mat-cell *matCellDef="let retailer"> {{retailer.area}} </mat-cell>
+
+</ng-container>
+
+
+
+<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
+</table>
+  <mat-paginator #paginator 
+              [pageIndex]="0"
+              [pageSize]="2"
+              [pageSizeOptions]="[2,5, 10, 25, 100]">
+</mat-paginator> -->
+
+<!-- <table #table mat-table class="mat-elevation-z8" 
+style="max-height: 400px; overflow: auto; width: 96%; margin: 2%; margin-bottom: 2%" 
+mat-table [dataSource]="dataSource" 
+matSort >
+
+<ng-container matColumnDef="transactionId">
+  <mat-header-cell *matHeaderCellDef> Transaction Id </mat-header-cell>
+  <mat-cell *matCellDef="let element">{{element.transactionId}}</mat-cell>
+</ng-container>
+
+
+<ng-container matColumnDef="buyerName">
+  <mat-header-cell *matHeaderCellDef> Buyer Name </mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.buyerName}} </mat-cell>
+</ng-container>
+
+
+<ng-container matColumnDef="sellerName">
+  <mat-header-cell *matHeaderCellDef> Seller Name</mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.sellerName}} </mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="totalPrice">
+  <mat-header-cell *matHeaderCellDef> Total Price</mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.totalPrice}} </mat-cell>mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="creationTime">
+  <mat-header-cell *matHeaderCellDef> Creation Time</mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.creationTime}} </mat-cell>mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="view">
+  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+  <mat-cell style="cursor: pointer" mat-cell *matCellDef="let element"><i class="material-icons"><a >remove_red_eye</a></i> </mat-cell>
+</ng-container>
+
+<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</table>
+
+<mat-paginator #paginator 
+             [pageIndex]="0"
+             [pageSize]="4"
+             [pageSizeOptions]="[ 4 , 8]">
+</mat-paginator> -->
+
+<select name="location" value="" style="width:230" >
+    <option selected="selected">- Select -</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color:#000000"><i>-Top Metropolitan Cities-</i></option>
+    <option>Ahmedabad</option> 
+    <option>Bengaluru/Bangalore</option>
+    <option>Chandigarh</option>
+    <option>Chennai</option>
+    <option>Delhi</option>
+    <option>Gurgaon</option>
+    <option>Hyderabad/Secunderabad</option>
+    <option>Kolkatta</option>
+    <option>Mumbai</option>
+    <option>Noida</option>
+    <option>Pune</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color: black"><i>-Andhra Pradesh-</i></option>
+    <option>Anantapur</option>
+    <option>Guntakal</option>
+    <option>Guntur</option>
+    <option>Hyderabad/Secunderabad</option>
+    <option>kakinada</option>
+    <option>kurnool</option>
+    <option>Nellore</option>
+    <option>Nizamabad</option>
+    <option>Rajahmundry</option>
+    <option>Tirupati</option>
+    <option>Vijayawada</option>
+    <option>Visakhapatnam</option>
+    <option>Warangal</option>
+    <option>Andra Pradesh-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color: black"><i>-Arunachal Pradesh-</i></option>
+    <option>Itanagar</option>
+    <option>Arunachal Pradesh-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Assam-</i></option>
+    <option>Guwahati</option>
+    <option>Silchar</option>
+    <option>Assam-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Bihar-</i></option>
+    <option>Bhagalpur</option>
+    <option>Patna</option>
+    <option>Bihar-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Chhattisgarh-</i></option>
+    <option>Bhillai</option>
+    <option>Bilaspur</option>
+    <option>Raipur</option>
+    <option>Chhattisgarh-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Goa-</i></option>
+    <option>Panjim/Panaji</option>
+    <option>Vasco Da Gama</option>
+    <option>Goa-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Gujarat-</i></option>
+    <option>Ahmedabad</option>
+    <option>Anand</option>
+    <option>Ankleshwar</option>
+    <option>Bharuch</option>
+    <option>Bhavnagar</option>
+    <option>Bhuj</option>
+    <option>Gandhinagar</option>
+    <option>Gir</option>
+    <option>Jamnagar</option>
+    <option>Kandla</option>
+    <option>Porbandar</option>
+    <option>Rajkot</option>
+    <option>Surat</option>
+    <option>Vadodara/Baroda</option>
+    <option>Valsad</option>
+    <option>Vapi</option>
+    <option>Gujarat-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Haryana-</i></option>
+    <option>Ambala</option>
+    <option>Chandigarh</option>
+    <option>Faridabad</option>
+    <option>Gurgaon</option>
+    <option>Hisar</option>
+    <option>Karnal</option>
+    <option>Kurukshetra</option>
+    <option>Panipat</option>
+    <option>Rohtak</option>
+    <option>Haryana-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Himachal Pradesh-</i></option>
+    <option>Dalhousie</option>
+    <option>Dharmasala</option>
+    <option>Kulu/Manali</option>
+    <option>Shimla</option>
+    <option>Himachal Pradesh-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Jammu and Kashmir-</i></option>
+    <option>Jammu</option>
+    <option>Srinagar</option>
+    <option>Jammu and Kashmir-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Jharkhand-</i></option>
+    <option>Bokaro</option>
+    <option>Dhanbad</option>
+    <option>Jamshedpur</option>
+    <option>Ranchi</option>
+    <option>Jharkhand-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Karnataka-</i></option>
+    <option>Bengaluru/Bangalore</option>
+    <option>Belgaum</option>
+    <option>Bellary</option>
+    <option>Bidar</option>
+    <option>Dharwad</option>
+    <option>Gulbarga</option>
+    <option>Hubli</option>
+    <option>Kolar</option>
+    <option>Mangalore</option>
+    <option>Mysoru/Mysore</option>
+    <option>Karnataka-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Kerala-</i></option>
+    <option>Calicut</option>
+    <option>Cochin</option>
+    <option>Ernakulam</option>
+    <option>Kannur</option>
+    <option>Kochi</option>
+    <option>Kollam</option>
+    <option>Kottayam</option>
+    <option>Kozhikode</option>
+    <option>Palakkad</option>
+    <option>Palghat</option>
+    <option>Thrissur</option>
+    <option>Trivandrum</option>
+    <option>Kerela-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Madhya Pradesh-</i></option>
+    <option>Bhopal</option>
+    <option>Gwalior</option>
+    <option>Indore</option>
+    <option>Jabalpur</option>
+    <option>Ujjain</option>
+    <option>Madhya Pradesh-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Maharashtra-</i></option>
+    <option>Ahmednagar</option>
+    <option>Aurangabad</option>
+    <option>Jalgaon</option>
+    <option>Kolhapur</option>
+    <option>Mumbai</option>
+    <option>Mumbai Suburbs</option>
+    <option>Nagpur</option>
+    <option>Nasik</option>
+    <option>Navi Mumbai</option>
+    <option>Pune</option>
+    <option>Solapur</option>
+    <option>Maharashtra-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Manipur-</i></option>
+    <option>Imphal</option>
+    <option>Manipur-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Meghalaya-</i></option>
+    <option>Shillong</option>
+    <option>Meghalaya-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Mizoram-</i></option>
+    <option>Aizawal</option>
+    <option>Mizoram-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Nagaland-</i></option>
+    <option>Dimapur</option>
+    <option>Nagaland-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Orissa-</i></option>
+    <option>Bhubaneshwar</option>
+    <option>Cuttak</option>
+    <option>Paradeep</option>
+    <option>Puri</option>
+    <option>Rourkela</option>
+    <option>Orissa-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Punjab-</i></option>
+    <option>Amritsar</option>
+    <option>Bathinda</option>
+    <option>Chandigarh</option>
+    <option>Jalandhar</option>
+    <option>Ludhiana</option>
+    <option>Mohali</option>
+    <option>Pathankot</option>
+    <option>Patiala</option>
+    <option>Punjab-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Rajasthan-</i></option>
+    <option>Ajmer</option>
+    <option>Jaipur</option>
+    <option>Jaisalmer</option>
+    <option>Jodhpur</option>
+    <option>Kota</option>
+    <option>Udaipur</option>
+    <option>Rajasthan-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Sikkim-</i></option>
+    <option>Gangtok</option>
+    <option>Sikkim-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Tamil Nadu-</i></option>
+    <option>Chennai</option>
+    <option>Coimbatore</option>
+    <option>Cuddalore</option>
+    <option>Erode</option>
+    <option>Hosur</option>
+    <option>Madurai</option>
+    <option>Nagerkoil</option>
+    <option>Ooty</option>
+    <option>Salem</option>
+    <option>Thanjavur</option>
+    <option>Tirunalveli</option>
+    <option>Trichy</option>
+    <option>Tuticorin</option>
+    <option>Vellore</option>
+    <option>Tamil Nadu-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Tripura-</i></option>
+    <option>Agartala</option>
+    <option>Tripura-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Union Territories-</i></option>
+    <option>Chandigarh</option>
+    <option>Dadra & Nagar Haveli-Silvassa</option>
+    <option>Daman & Diu</option>
+    <option>Delhi</option>
+    <option>Pondichery</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color : black"><i>-Uttar Pradesh-</i></option>
+    <option>Agra</option>
+    <option>Aligarh</option>
+    <option>Allahabad</option>
+    <option>Bareilly</option>
+    <option>Faizabad</option>
+    <option>Ghaziabad</option>
+    <option>Gorakhpur</option>
+    <option>Kanpur</option>
+    <option>Lucknow</option>
+    <option>Mathura</option>
+    <option>Meerut</option>
+    <option>Moradabad</option>
+    <option>Noida</option>
+    <option>Varanasi/Banaras</option>
+    <option>Uttar Pradesh-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color: black"><i>-Uttaranchal-</i></option>
+    <option>Dehradun</option>
+    <option>Roorkee</option>
+    <option>Uttaranchal-Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243);color : black"><i>-West Bengal-</i></option>
+    <option>Asansol</option>
+    <option>Durgapur</option>
+    <option>Haldia</option>
+    <option>Kharagpur</option>
+    <option>Kolkatta</option>
+    <option>Siliguri</option>
+    <option>West Bengal - Other</option>
+    <option disabled="disabled" style="background-color:rgb(183, 226, 243); color: black"><i>-Other-</i></option>
+    <option>Other</option>
+</select>
